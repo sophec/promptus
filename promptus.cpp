@@ -8,6 +8,7 @@
 #include <string_view>
 #include <sys/types.h>
 #include <sys/utsname.h>
+#include <unistd.h>
 
 #include <fmt/format.h>
 
