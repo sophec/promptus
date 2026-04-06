@@ -40,6 +40,11 @@ inline constexpr bool kPromptStatus{true};
 // prompt in front of the prompt. This uses the kPrefix style.
 inline constexpr bool kEnablePyVenv{true};
 
+// Enable support for custom environment prompts. If Python venv is not enabled,
+// or if one is not in use, this option checks the PROMPTUS_PREFIX environment
+// variable for the prompt prefix. Uses the kPrefix style.
+inline constexpr bool kEnableCustomPrefix{true};
+
 // Items which can be styled independently.
 enum class StyleItem {
   kPwd,

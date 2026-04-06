@@ -90,6 +90,12 @@ int main(int argc, char** argv) {
     prefix = GetEnv("VIRTUAL_ENV_PROMPT").value_or(""sv);
   }
 
+  if constexpr (config::kEnableCustomPrefix) {
+    if (prefix.empty()) {
+      prefix = GetEnv("PROMPTUS_PREFIX").value_or(""sv);
+    }
+  }
+
   fmt::print("{}{}{}{}",
              lescape, Colors(StyleItem::kPrefix), rescape, prefix);
   if (!prefix.empty() && prefix.back() != ' ') {
