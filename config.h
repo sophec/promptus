@@ -45,6 +45,10 @@ inline constexpr bool kEnablePyVenv{true};
 // variable for the prompt prefix. Uses the kPrefix style.
 inline constexpr bool kEnableCustomPrefix{true};
 
+// Hide terminal progress bar (OSC 9;4) on startup. If the previous process left
+// the terminal progress bar in an undefined state, this will clear it.
+inline constexpr bool kHideTermProgress{true};
+
 // Items which can be styled independently.
 enum class StyleItem {
   kPwd,

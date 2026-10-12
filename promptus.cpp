@@ -96,6 +96,10 @@ int main(int argc, char** argv) {
     }
   }
 
+  if constexpr (config::kHideTermProgress) {
+    fmt::print("{}\033]9;4;0;0\07{}", lescape, rescape);
+  }
+
   fmt::print("{}{}{}{}",
              lescape, Colors(StyleItem::kPrefix), rescape, prefix);
   if (!prefix.empty() && prefix.back() != ' ') {
